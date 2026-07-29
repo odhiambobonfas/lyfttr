@@ -1,0 +1,255 @@
+/* ===== Reset & Base ===== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  width: 100%;
+  min-height: 100%;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: #f2f2f2;
+  min-height: 100vh;
+  color: #000;
+}
+
+/* ===== Page layout ===== */
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(32px, 6vw, 80px) clamp(16px, 4vw, 32px);
+}
+
+/* ===== Card shell ===== */
+.card-shell {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid #e0e0e0;
+  background: #fff;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* ===== Card Header ===== */
+.card-header {
+  background: #fff;
+  padding: clamp(24px, 5vw, 40px) clamp(20px, 5vw, 36px) clamp(20px, 4vw, 32px);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.header-logo {
+  width: 100%;
+  max-width: 340px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.header-divider {
+  width: 40px;
+  height: 1px;
+  background: #e0e0e0;
+}
+
+.header-brand {
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #000;
+  font-weight: 600;
+}
+
+/* ===== Perforation seam ===== */
+.seam {
+  position: relative;
+  height: 20px;
+  background: #000;
+}
+
+.seam::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 22px;
+  background-image: radial-gradient(circle, #fff 6px, transparent 6px);
+  background-size: 22px 22px;
+  background-position: center;
+  background-repeat: repeat-x;
+}
+
+/* ===== Card Body ===== */
+.card-body {
+  background: #fff;
+  padding: clamp(24px, 5vw, 36px) clamp(20px, 5vw, 32px) clamp(28px, 5vw, 36px);
+}
+
+/* Amount */
+.amount-section {
+  text-align: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 20px;
+}
+
+.amount-value {
+  font-size: clamp(48px, 11vw, 68px);
+  color: #000;
+  font-family: Georgia, 'Times New Roman', serif;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  font-weight: 400;
+}
+
+.amount-currency {
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #666;
+  margin-top: 6px;
+}
+
+/* Balance */
+.balance-section {
+  text-align: center;
+  margin-bottom: 24px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.balance-date {
+  font-size: 12px;
+  color: #555;
+  margin-bottom: 6px;
+}
+
+.balance-note {
+  font-size: 10px;
+  color: #999;
+  line-height: 1.5;
+  margin-top: 8px;
+}
+
+/* Copy Rows */
+.copy-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.copy-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: #f7f7f7;
+  border: 1px solid #d0d0d0;
+  border-radius: 10px;
+  padding: 12px 14px;
+}
+
+.copy-row-info {
+  min-width: 0;
+}
+
+.copy-row-label {
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #888;
+  margin-bottom: 4px;
+}
+
+.copy-row-value {
+  font-size: 14px;
+  font-weight: 700;
+  color: #000;
+  letter-spacing: 0.06em;
+  font-family: 'Courier New', Courier, monospace;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.copy-btn {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #fff;
+  background: #EA0B8C;
+  border: 1px solid #EA0B8C;
+  border-radius: 8px;
+  padding: 6px 12px;
+  cursor: pointer;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: background 0.15s, border-color 0.15s;
+  white-space: nowrap;
+}
+
+.copy-btn:hover {
+  background: #c50077;
+  border-color: #c50077;
+}
+
+.copy-btn.copied {
+  background: #EA0B8C;
+  color: #fff;
+  border-color: #EA0B8C;
+}
+
+.copy-btn svg {
+  width: 12px;
+  height: 12px;
+  stroke: currentColor;
+  stroke-width: 2.5;
+  fill: none;
+}
+
+/* Message footer */
+.card-message {
+  padding-top: 20px;
+  border-top: 1px dashed #ccc;
+  text-align: center;
+  font-size: 13px;
+  color: #000;
+  line-height: 1.6;
+  font-style: italic;
+}
+
+/* ===== Responsive ===== */
+  @media (max-width: 400px) {
+  .copy-row-value {
+    font-size: 12px;
+  }
+  .card-shell {
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.07);
+  }
+}
+
+@media (min-width: 900px) {
+  .card-shell {
+    max-width: 460px;
+  }
+}
