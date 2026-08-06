@@ -8,8 +8,8 @@ export default function App() {
         brand="Reward"
         amount={100.0}
         currency="USD"
-        cardNumber="6318 4960 4965 8285"
-        pin="29039387"
+        cardNumber="6318 4960 4959 4794"
+        pin="71787689"
         asOf={new Date()}
         balanceUrl="#"
         message="Thank you for your loyalty!"
